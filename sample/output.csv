@@ -1,0 +1,100 @@
+programminghorror,c4217o8,flussence,8,1332007969,"Tangentially related: I spent weeks making an in-house ""lightbox"" thing, making it do graceful degradation, following (and even implementing) several HTML 5 features correctly, making it work **in IE6**, even *documenting the API* fully (something *none* of our other internal code gets).
+
+Then the web designer guy took it and did exactly the same as what you have there, splurging a bunch of `onclick` things around. Because `&lt;a class=""lightbox""&gt;` is clearly too hard."
+programminghorror,c421h3b,nevon,4,1332009725,Hah! :D I have seen lines almost exactly like that in quite a few university coursework submissions.
+programminghorror,c423bgc,Inverter,9,1332022564,"That's like the good ol'
+
+    if ( x != 0 )
+        return true;
+    else
+        return false;
+
+instead of
+
+    return x;
+
+where x is an integer inside a function returning bool.
+"
+programminghorror,c424bam,killyouintheface,6,1332029651,"wtf is that shit?
+
+Why would he even do it that way?"
+programminghorror,c424bdb,[deleted],2,1332029665,I've written loops where I initialized a bool variable which I set to false when I wanted to break out of the loop.
+programminghorror,c424zxn,flussence,6,1332034537,"I don't know, and I don't want to find out. The general culture there is one of doing the absolute minimum necessary to make the client pay up.
+
+Thankfully most of my work now is on a death march project none of the others have written a line of code for in half a decade, so it doesn't kill my sanity *too* rapidly any more. Not that I have much left."
+programminghorror,c425144,killyouintheface,3,1332034775,I had to ask because I just couldn't get my head around the idea. Glad you're in a better spot now. 
+programminghorror,c4256tr,mreiland,4,1332035918,"Depends on the language, that's certainly valid in specific languages."
+programminghorror,c425ejv,PendingPhysics,5,1332037426,"Usually, I opt for ""while(true) { if (cond) break; ... }""."
+programminghorror,c425qxm,matureIrrelevance,13,1332039759,"I have one better than this.  I have seen code like this (where val is a boolean):
+
+    if(val == true)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+
+my apologies for formatting, apparently I don't know how to format code here....
+(edit: trying to fix formatting - thx to ladaghini, I tried to prefix the code with four spaces.  I didn't realize though that I needed an extra line break before the code)"
+programminghorror,c425z1b,TomSwirly,2,1332041281,"Er, he's on a [death march project](https://en.wikipedia.org/wiki/Death_march_\(project_management\))!"
+programminghorror,c426hzw,killyouintheface,1,1332044895,Tongue was firmly in cheek. Sorry. 
+programminghorror,c426s5k,dgahimer,4,1332046928,"I kept doing this in one of my beginner CS labs. I couldn't figure out why the guy sitting next to me finished so much quicker, so I asked how he did it. I felt like an idiot."
+programminghorror,c427d6s,meem1029,1,1332051505,"I will sadly admit that I have wrote if(val==true) several times, but I caught myself fairly quickly when I realized how ridiculous I was being. I've never tried to return stuff from it though."
+programminghorror,c427iqn,Axman6,9,1332052835,"But you **have to be absolutely sure** you're returning a String object, and not something else. What if toString() returned an Int? This is just insurance, and makes the intent of the code clear!"
+programminghorror,c427r9m,ladaghini,1,1332055096,"If you want to include code inline, use the backticks (or whatever they are called): \`Type inline code here\`. Also, if you use Reddit Enhancement Suite, you get a preview right below the text area.
+
+If you want to insert a block of code, indent the lines with four spaces:
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;return (bool) x;
+
+Also, there's the formatting help link right below the text area."
+programminghorror,c427sso,ladaghini,1,1332055533,"It's not that wrong though, because it might make the code easier to read. However, sometimes I frame boolean variable names in such a way that you can tell they are boolean and so they alone suffice as the `if` statement's condition, e.g., `isOdd`, `inWord`:
+
+    if (isOdd) { }
+    if (inWord) 
+        inWord = !inWord;
+    if (isLeapYear)
+    {
+        return 29;
+    }"
+programminghorror,c427uwz,nevon,7,1332056158,"If it makes you feel any better, looking back at old code is always horrible. In a year or two, you'll most likely look back at the code you're writing now and think to yourself: ""What the hell was I thinking!?"""
+programminghorror,c427vt2,ladaghini,4,1332056435,"At first I wondered why the String API would even have toString() method  and if the API even had one. (Stupid thought in hindsight as there are valid reasons.)
+
+But I went over there to see what is listed for that method:
+ 
+
+`String toString()`: This object (which is already a string!) is itself returned."
+programminghorror,c427wsg,cat_in_the_wall,4,1332056747,"in languages where there is a strong notion of a boolean type, you could not do ""return x"". Of course, in that case, you would do ""return x != 0""."
+programminghorror,c4285y3,[deleted],1,1332059968,[deleted]
+programminghorror,c4286e7,[deleted],2,1332060125,"Yes, exactly, which made what I've done pretty stupid."
+programminghorror,c4286kb,SCombinator,1,1332060194,"""too sure"""
+programminghorror,c4286oq,SCombinator,2,1332060239,"You were probably (if you're lucky) thinking that you have a job to do, and functionality to achieve."
+programminghorror,c428yxx,maximinus-thrax,8,1332073676,"In fact, that notation just looks better than
+
+    return x
+
+because it makes the intention very clear."
+programminghorror,c429rsm,nevon,3,1332083135,"Oh dear God...
+
+What does that even do...?"
+programminghorror,c429sj9,Hi_Kate,1,1332083317,"It somehow categorizes links and then does some magic, or at least is supposed to."
+programminghorror,c42a9dc,Inverter,1,1332087141,"Normally I end up with such small/simple functions that I can simply `return` from the loop when such a break-condition is true (because whatever code is ""around"" the loop is in a different function anyhow).
+
+"
+programminghorror,c42ac6c,Toastdeib,25,1332087725,"I... bu... wha...
+There's a line between having a useful level of detail in variable names and having ridiculously long and unreadable ones. This falls firmly on the right side of said line. Yeesh."
+programminghorror,c42aekh,aukatrau,9,1332088200,"It's because Strings are objects in java, and every class has the Object class as a superclass and the Object class has a .toString() method. "
+programminghorror,c42atav,rozzlapede,6,1332090967,Might it be WSDL-generated code?
+programminghorror,c42ccpa,catcradle5,11,1332100657,"Hell, I look back at code I wrote a month ago and go ""what the fuck is this shit.""
+
+And if I'm being particularly dumb, sometimes code I wrote a week ago.....
+
+It's always good to have the presence of mind to realize when you've done something stupid though. That's how you learn and improve."
+programminghorror,c42cdvt,tweakerbee,2,1332100859,A good IDE will catch ~~stupid~~ rookie mistakes like these. (Edit: I was referring to IntelliJ IDEA.)
+programminghorror,c42cfek,nevon,6,1332101112,"There have been times where I've looked at code that I just wrote, thought: ""What the fuck are you doing...?"" and still kept on writing. Being able to refactor code is a luxury that you don't always have. :("
+programminghorror,c42cxa3,Malplay,22,1332104002,Comments embedded in variable names: the biggest step in computer science since object oriented programming?
+programminghorror,c42cy6a,tnecniv,5,1332104154,"Unless it is Perl, in which case you will think ""What the hell does any of this mean?!""
+
+(More seriously, Perl is fine as long as you don't try to write your whole program in one line)"
